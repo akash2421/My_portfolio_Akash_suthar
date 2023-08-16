@@ -85,9 +85,33 @@ main{
     width: 100%;
     height: 100%;
 }
+.download 
+{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+    font-size: 40px;
+    cursor: pointer;
+    
+}
+.download  i{
+    margin-left: 20px;
+}
+
+.down-arrow
+{
+   color:blue;
+   text-align: center;
+   font-size: 70px;
+    position: absolute;
+    z-index: 1;
+     left: 50%;
+     bottom: 40px;
+}
 .hero{
     width: 100%;
-    height: 600px;
+    height: 700px;
     opacity:.5;
     background: url(img/hero-bg.jpg);
     background-size:cover;
@@ -110,10 +134,9 @@ main{
 {
     width: 500px;
     padding: 20px;
- z-index: 2;
- opacity: 1;
     top: 30%;
     left: 13%;
+    z-index: 1;
     padding: 30px;
     position: absolute;
 
@@ -208,11 +231,11 @@ margin-bottom: 10px;
 }
 .about-box
 {
-    width: 95%;
+    width: 100%;
     background:#Fefefe;
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: start;
+    gap: 2rem;
 
 }
 .left{
@@ -224,56 +247,30 @@ margin-bottom: 10px;
 }
 .right
 {
-    padding: 10px
+    padding: 10px;
+    width: 60%;
 }
-.right .col1
+
+.col2 
 {
-    margin-top: 10px;
+width: 100%;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+padding: 1rem;
+
 }
-.right .col1 h1{
-    font-weight: 700;
-    font-size: 26px;
-    color: #728394;
-}
-.right .col1 p{
-    margin-top: 10px;
-    font-style: italic;
-}
-.right .col2
-{
+
+.col2 .col2-box{
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    width: 100%;
-}
-.col2 .col2-box
-{
+    align-items: start;
+    background-color: #333;
+    color: #fff;
     align-items: center;
-    width: 100%;
+    margin-top: 1rem;
+    padding: 0.2rem;
+
+   
 }
 
-.col2 .col2-box .col2-box-align
-{
-    display: flex;
-    justify-content: start;
-    gap: 0.5rem;
-    margin-bottom: 10px;
-    align-items: center;
-}
-.col2 .col2-box .col2-box-align h3{
-    font-size: 15px;
-}
-
-.about-buttom
-{
-    margin-top: 20px;
-}
-.about-button p{
-    font-weight: 400;
-    font-size: 10px;
-
-
-}
 
 
 .fact-box
@@ -287,30 +284,32 @@ margin-bottom: 10px;
 .fact-box .fact-rows
 {
     padding: 20px;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
-.fact-box .fact-rows span{
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    padding: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    
-}
-.fact-box .fact-rows i{
-    color: white;
+
+.fact-box .fact-rows a{
+    color: 000;
     font-size: 20px;
+    color: #fff;
+    padding: 1rem;
+    background: var(--primary-color);
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    border: 5px solid coral;
+
+    animation: mymove 5s infinite;
+
 }
-.fact-box .fact-rows h2{
-margin-bottom: 10px;
-}
+
+
+@keyframes mymove {
+    50% {border-color: lightblue;}
+  }
 
 .skills
 {
@@ -347,30 +346,9 @@ margin-bottom: 10px;
 .skill-head p{
     font-size: 12px;
 }
-.project{
-    margin-top: -100px;
-}
-.filter
-{
-   display: flex;
-   position: relative;
 
-    color: #000;
-    height: 7%;
-    width: 60%;
-    align-items: center;
-    justify-content:space-evenly;
-    margin-left: 17%;
 
-}
-.filter h3{
-    font-size: 15px;
-    cursor: pointer;
-}
 
-.filter h3:hover{
-    color: var(--primary-color);
-}
 .project-col
 {
     width: 95%;
@@ -380,14 +358,16 @@ margin-bottom: 10px;
     gap: 3rem;
     margin-top: 30px;
 }
-.project-row{
-   position: relative;
+.project-row
+{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
 }
 .project-row img
 {
-    width: 350px;
-    height: 250px;
-        display: block;
+    width: 550px;
+    height: 350px;
+     display: block;
 
 }
 .overlay {
@@ -410,19 +390,36 @@ margin-bottom: 10px;
   .project-row:hover .overlay {
     opacity: 1;
     transition: all 200ms ease-in;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 
   }
 
   
-  .overlay  p{
-margin-top: 5px;
+  .overlay .col12{
+display: flex;
+flex-direction: column;
+font-size: 40px;
+align-items: center;
+margin-top: 10%;
+
 
   }
   .overlay a:hover{
-transform: scale(1.2)
+transform: scale(1.2);
+  }
+
+  .project-name{
+    width: 100%;;
+    height: 50px;
+    padding: 10px;
+    line-height: 0;
+    background:#333;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
   }
 footer{
-    margin-top: 280px;
+    margin-top: 100%;
     background-color: aliceblue;
 
  
